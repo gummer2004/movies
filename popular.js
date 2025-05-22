@@ -12,8 +12,8 @@ async function  App() {
     for (let i =0; i < data.length ; i++){
         
         movies += `<div class="rounded-xl overflow-hidden border border-2 border-blue-200">
-            <img src="minecrafts.jpg" alt="minecraft" class="w-full">
-            <p class="text-gray-100 bg-gray-900 inline rounded-full p-1 absolute -mt-4 ml-4 border border-yellow-300 border-2">${data[i].vote_average}</p>
+            <img src="${config.image_base_url + data[i]?.poster_path}" alt="${data[i].title}" class="w-full">
+            <p class="text-gray-100 bg-gray-900 inline rounded-full p-1 absolute -mt-4 ml-4 border border-yellow-300 border-2">${Math.round(data[i].vote_average * 10)}</p>
             <div class="p-4">
             <p class="font-semibold">${data[i].title}</p>
             <p class="">${data[i].release_date}</p>
