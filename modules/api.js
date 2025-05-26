@@ -20,7 +20,7 @@ export async function getPopularMovies(page = 1) {
 export async function getMovieDetails(movieID,page = 1) {
     let data = []
     try {
-        const response = await fetch(`${BASE_URL}movie/${movieID}?append_to_response=credits&page=${page}`,{
+        const response = await fetch(`${BASE_URL}movie/${movieID}?append_to_response=credits,release_dates&page=${page}`,{
             method: 'get',
             headers: new Headers({
                 'Authorization': `Bearer ${API_TOKEN}`,
